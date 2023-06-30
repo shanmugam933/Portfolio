@@ -16,22 +16,16 @@ class PHPMailerController extends Controller
         $subject = $request->input('subject');
         $message = $request->input('message');
 
-        // Instantiate a new PHPMailer instance
         $mail = new PHPMailer(true);
-
-        // SMTP configuration
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'draganddropproject0@gmail.com'; // Replace with your Gmail address
-        $mail->Password = 'lvoebqjzlmctviqq'; // Replace with your Gmail password
+        $mail->Username = 'draganddropproject0@gmail.com';
+        $mail->Password = 'lvoebqjzlmctviqq';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
-
-        // Sender and recipient settings
         $mail->setFrom($email, $name);
         $mail->addAddress('chanshan250@gmail.com', 'Shanmugam');  // Replace with recipient email address and name
-
 
 
         // Email content
@@ -81,12 +75,8 @@ class PHPMailerController extends Controller
                     </table>
                 </body>
             </html>';
-        
-        
 
-        // Send email and handle errors
         try {
-
             $mail->send();
             DB::table('emails')->insert([
                 'name' => $name,
