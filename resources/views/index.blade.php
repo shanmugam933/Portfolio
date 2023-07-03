@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Shanmugam - Portfolio</title>
+  <title>Shanmugam | Portfolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -552,12 +552,12 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <a href="https://prabhu-dev.github.io"><img src="{{asset('assets/img/testimonials/prabhu.jpg')}}" class="testimonial-img" alt=""></a>
+                <h3>Prabhu</h3>
+                <h4>Software Developement Engineer - Test</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  I had the privilege of working closely with <strong>Shanmugam</strong> as a tester for several applications, and I can wholeheartedly vouch for their exceptional skills and dedication as a tester.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -644,7 +644,7 @@
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>9159018692</p>
+                <p>+91 9159018692</p>
               </div>
             </div>
          </div>
