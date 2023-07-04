@@ -32,52 +32,59 @@ class PHPMailerController extends Controller
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = '
-            <html>
-                <head>
-                    <style>
-                        /* Set background image */
-                        body {
-                            background-image: url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg");
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            color:white;
-                        }
-                        /* Style the message content */
-                        table {
-                            width: 100%;
-                            max-width: 600px;
-                            margin: 20px auto;
-                            background-color: rgba(255,255,255,0.5);
-                            border-radius: 10px;
-                            padding: 20px;
-                            font-size: 18px;
-                            line-height: 1.5;
-                        }
-                        h1 {
-                            font-size: 24px;
-                            font-weight: bold;
-                            margin-top: 0;
-                        }
-                        p {
-                            margin: 0;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <table>
-                        <tr>
-                            <td>
-                                <h1>New message from ' . $name . '</h1>
-                                <p>Email: ' . $email . '</p>
-                                <p>Message: ' . $message . '</p>
-                            </td>
-                        </tr>
-                    </table>
-                </body>
-            </html>';
+        <html>
+        <head>
+            <style>
+                /* Set background color */
+                body {
+                    background-color: #f2f2f2;
+                    font-family: Arial, sans-serif;
+                    color: #444444;
+                }
+
+                /* Style the message container */
+                .container {
+                    max-width: 600px;
+                    margin: 20px auto;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    padding: 20px;
+                    font-size: 18px;
+                    line-height: 1.5;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+
+                /* Style the heading */
+                h1 {
+                    font-size: 24px;
+                    font-weight: bold;
+                    margin-top: 0;
+                    color: #333333;
+                }
+
+                /* Style the content */
+                p {
+                    margin: 0;
+                    color: #555555;
+                }
+
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>New message from '.$name.'</h1>
+                <p>Email: ' . $email . '</p>
+                <p>Message: ' . $message . '</p>
+            </div>
+
+        </body>
+        </html>';
 
         try {
             $mail->send();
+
+
+
             DB::table('emails')->insert([
                 'name' => $name,
                 'email' => $email,
@@ -86,7 +93,73 @@ class PHPMailerController extends Controller
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
+
+             // Thank you mall
+             $thankYouMail = new PHPMailer(true);
+             $thankYouMail->isSMTP();
+             $thankYouMail->SMTPAuth = true;
+             $thankYouMail->Username = 'draganddropproject0@gmail.com';
+             $thankYouMail->Password = 'lvoebqjzlmctviqq';
+             $thankYouMail->SMTPSecure = 'tls';
+             $thankYouMail->Port = 587;
+             $thankYouMail->addAddress($email, $name);
+             $thankYouMail->isHTML(true);
+             $thankYouMail->Host = 'smtp.gmail.com';
+             $thankYouMail->Subject = 'Thank you for contacting us!';
+             $thankYouMail->Body = '
+             <html>
+             <head>
+                 <style>
+                     /* Set background color */
+                     body {
+                         background-color: #f2f2f2;
+                         font-family: Arial, sans-serif;
+                         color: #444444;
+                         margin: 0;
+                         padding: 0;
+                     }
+
+                     /* Style the container */
+                     .container {
+                         max-width: 600px;
+                         margin: 20px auto;
+                         background-color: #ffffff;
+                         border-radius: 10px;
+                         padding: 40px;
+                         font-size: 18px;
+                         line-height: 1.5;
+                         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                     }
+
+                     /* Style the heading */
+                     h1 {
+                         font-size: 28px;
+                         font-weight: bold;
+                         margin-top: 0;
+                         margin-bottom: 20px;
+                         color: #333333;
+                     }
+
+                     /* Style the content */
+                     p {
+                         margin: 0 0 20px 0;
+                         color: #555555;
+                     }
+                 </style>
+             </head>
+             <body>
+                 <div class="container">
+                     <h1>Thank you for contacting us,'.$name.'!</h1>
+                     <p>We have received your message and will get back to you as soon as possible.</p>
+                 </div>
+             </body>
+             </html>
+             ';
+
+             $thankYouMail->send();
+
             return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
+
         } catch (Exception $e) {
             return redirect()->back()->with('error', 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
         }

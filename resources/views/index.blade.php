@@ -10,9 +10,9 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <a  href="https://icons8.com/icon/PkQpLJisPiTI/backend-development"></a>
+  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
+
+  {{-- <a  href="https://icons8.com/icon/PkQpLJisPiTI/backend-development"></a> --}}
 
   <!-- Google Fonts -->
 
@@ -30,18 +30,10 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   {{-- Alert --}}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="{{asset('assets/css/sweet_alert.css')}}">
+  <script src="{{asset('assets/js/sweet_alert_js.js')}}"></script>
+  <link rel="stylesheet" href="{{asset('assets/css/goole_font_material.css')}}" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-
-  <!-- =======================================================
-  * Template Name: MyResume
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
