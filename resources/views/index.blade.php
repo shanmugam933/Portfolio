@@ -106,7 +106,7 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <p>I am a passionate web developer and software engineer with over 5 years of experience in building web applications. My expertise includes developing scalable and robust applications using modern web technologies such as PHP, Laravel, JavaScript, React, and Node.js</p>
+          <p>I am a passionate web developer and software engineer with over 2+ years of experience in building web applications. My expertise includes developing scalable and robust applications using modern web technologies such as PHP, Laravel, JavaScript, React, and Node.js</p>
         </div>
 
         <div class="row">
@@ -121,28 +121,27 @@
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>9 Oct 1999</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>9159018692</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>TamilNadu, India</span></li>
+                  <li><i class="bi bi-balloon-fill"></i> <strong>Birthday:</strong> <span>9 Oct 1999</span></li>
+                  <li><i class="bi bi-globe"></i> <strong>Website:</strong> <span>www.dream-dev.in</span></li>
+                  <li><i class="bi bi-telephone-fill"></i> <strong>Phone:</strong> <span>+91 9159018692</span></li>
+                  <li><i class="bi bi-geo-alt-fill"></i> <strong>City:</strong> <span>TamilNadu, India</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>23</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BCA</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>chanshan250@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                  <li><i class="bi bi-calendar2-week-fill"></i> <strong>Age:</strong> <span>23</span></li>
+                  <li><i class="bi bi-mortarboard-fill"></i> <strong>Degree:</strong> <span>BCA</span></li>
+                  <li><i class="bi bi-envelope-at-fill"></i> <strong>Email:</strong> <span>chanshan250@gmail.com</span></li>
+                  <li><i class="bi bi-briefcase-fill"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
             </div>
 
           </div>
         </div>
-
       </div>
-    </section><!-- End About Section -->
-
+    </section>
+    <!-- End About Section -->
     <!-- ======= Facts Section ======= -->
     {{-- <section id="facts" class="facts">
       <div class="container" data-aos="fade-up">
@@ -190,16 +189,13 @@
 
       </div>
     </section><!-- End Facts Section --> --}}
-
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Skills</h2>
           <p>I am a passionate web developer with a strong foundation in front-end and back-end technologies. I specialize in creating dynamic and user-friendly web applications that deliver exceptional user experiences. With a keen eye for detail and a focus on clean code practices, I strive to develop high-quality, scalable solutions</p>
         </div>
-
         <div class="row skills-content">
           <div class="col-lg-6">
             @foreach($skills->take(3) as $skill)
