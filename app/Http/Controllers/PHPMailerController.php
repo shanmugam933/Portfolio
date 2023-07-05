@@ -11,6 +11,9 @@ class PHPMailerController extends Controller
 {
     public function sendEmail(Request $request)
     {
+
+    try {
+            
         $name = $request->input('name');
         $email = $request->input('email');
         $subject = $request->input('subject');
@@ -80,11 +83,8 @@ class PHPMailerController extends Controller
         </body>
         </html>';
 
-        try {
+
             $mail->send();
-
-
-
             DB::table('emails')->insert([
                 'name' => $name,
                 'email' => $email,
@@ -95,18 +95,11 @@ class PHPMailerController extends Controller
             ]);
 
              // Thank you mall
-             $thankYouMail = new PHPMailer(true);
-             $thankYouMail->isSMTP();
-             $thankYouMail->SMTPAuth = true;
-             $thankYouMail->Username = 'draganddropproject0@gmail.com';
-             $thankYouMail->Password = 'lvoebqjzlmctviqq';
-             $thankYouMail->SMTPSecure = 'tls';
-             $thankYouMail->Port = 587;
-             $thankYouMail->addAddress($email, $name);
-             $thankYouMail->isHTML(true);
-             $thankYouMail->Host = 'smtp.gmail.com';
-             $thankYouMail->Subject = 'Thank you for contacting us!';
-             $thankYouMail->Body = '
+             $mail->clearAddresses();
+             $mail->addAddress($email, $name);
+             $mail->isHTML(true);
+             $mail->Subject = 'Thank you for contacting us!';
+             $mail->Body = '
              <html>
              <head>
                  <style>
@@ -156,7 +149,7 @@ class PHPMailerController extends Controller
              </html>
              ';
 
-             $thankYouMail->send();
+             $mail->send();
 
             return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
 
