@@ -13,7 +13,7 @@ class PHPMailerController extends Controller
     {
 
     try {
-            
+
         $name = $request->input('name');
         $email = $request->input('email');
         $subject = $request->input('subject');
@@ -94,7 +94,7 @@ class PHPMailerController extends Controller
                 'updated_at' => now(),
             ]);
 
-             // Thank you mall
+             //Thank you mall
              $mail->clearAddresses();
              $mail->addAddress($email, $name);
              $mail->isHTML(true);
