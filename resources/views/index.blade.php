@@ -83,6 +83,7 @@
       <div class="social-links">
         <a href="https://teams.microsoft.com/l/chat/0/0?users=chanshan250@gmail.com" class="teams"><i class='bx bxl-microsoft-teams'></i></a>
         <a href="https://wa.me/9159018692" class="whatsapp"><i class='bx bxl-whatsapp' ></i></a>
+        <a href="https://github.com/shanmugam933" class="instagram"><i class='bx bxl-github'></i></a>
         <a href="https://www.instagram.com/_shanmugam_m/" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="skype:live:.cid.871636a36cfd4258?chat" class="google-plus"><i class="bx bxl-skype"></i></a>
         <a href="https://www.linkedin.com/in/shanmugam-n-b69866176/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
@@ -676,6 +677,7 @@
       <div class="social-links">
         <a href="https://teams.microsoft.com/l/chat/0/0?users=chanshan250@gmail.com" class="teams"><i class='bx bxl-microsoft-teams'></i></a>
         <a href="https://wa.me/9159018692" class="whatsup"><i class='bx bxl-whatsapp' ></i></a>
+        <a href="https://github.com/shanmugam933" class="whatsup"><i class='bx bxl-github'></i></a>
         <a href="https://www.instagram.com/_shanmugam_m/" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         <a href="https://www.linkedin.com/in/shanmugam-n-b69866176/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
