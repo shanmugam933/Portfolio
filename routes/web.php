@@ -19,6 +19,6 @@ Route::get('/', function () {
 });
 Route::get('/', [ViewController::class, 'index'])->name('skills');
 
- 
-Route::any('sendEmail', [PHPMailerController::class, 'sendEmail'])->name('sendEmail');
+
+Route::post('sendEmail', [PHPMailerController::class, 'sendEmail'])->name('sendEmail');
 Route::get('/', [ViewController::class, 'index'])->name('skills');

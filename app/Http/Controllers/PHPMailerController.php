@@ -84,7 +84,7 @@ class PHPMailerController extends Controller
         </html>';
 
 
-            $mail->send();
+            // $mail->send();
             DB::table('emails')->insert([
                 'name' => $name,
                 'email' => $email,
@@ -149,12 +149,14 @@ class PHPMailerController extends Controller
              </html>
              ';
 
-             $mail->send();
+            //  $mail->send();
 
-            return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
+             return response()->json(['message' => 'Email sent successfully']);
 
         } catch (Exception $e) {
-            return redirect()->back()->with('error', 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
+
+            return response()->json(['message' => 'Email sent failed']);
+
         }
     }
 }

@@ -638,8 +638,7 @@
             </div>
          </div>
           <div class="col-lg-8 mt-5 mt-lg-0">
-            <form action="{{route('sendEmail')}}" method="post" role="form" class="php-email-form">
-                @csrf
+            <div  class="php-email-form">
                 <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -652,15 +651,14 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="5"  id="message" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
                 <div class="error-message">{{ session('error')}}</div>
                 <div class="sent-message"></div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+              <div class="text-center"><button type="submit" id="sendMessage">Send Message</button></div>
+            </div>
          </div>
         </div>
       </div>
@@ -713,3 +711,74 @@
 </body>
 
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // CSRF token
+       ;
+
+        // Send message on button click
+        $('#sendMessage').click(function() {
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var subject = $('#subject').val();
+            var message = $('#message').val();
+            Swal.fire({
+                html: 'Sending Message Please Wait!',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                onBeforeOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+            $.ajax({
+                url: "{{ url('sendEmail') }}",
+                type: "POST",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message
+                },
+                dataType: 'json',
+                // beforeSend: function() {
+                //     $('.loading').text('Loading...');
+                // },
+                success: function(result) {
+                    Swal.close();
+
+                // Clear the input fields
+                $('#name').val('');
+                $('#email').val('');
+                $('#subject').val('');
+                $('#message').val('');
+
+                 Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: result.message
+                });
+
+                },
+                error: function(xhr, status, error) {
+                    Swal.close();
+                // Clear the input fields
+                $('#name').val('');
+                $('#email').val('');
+                $('#subject').val('');
+                $('#message').val('');
+
+                    swal({
+                        title: "Error!",
+                        text: xhr.responseJSON.message,
+                        icon: "error",
+                        button: "OK",
+                    });
+                },
+
+            });
+        });
+
+    });
+</script>
