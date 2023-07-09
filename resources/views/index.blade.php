@@ -115,7 +115,7 @@
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-balloon-fill"></i> <strong>Birthday:</strong> <span>9 Oct 1999</span></li>
-                  <li><i class="bi bi-globe"></i> <strong>Website:</strong> <span>www.dream-dev.in</span></li>
+                  <li><i class="bi bi-globe"></i> <strong>Website:</strong> <span>https://dream-dev.in/</span></li>
                   <li><i class="bi bi-telephone-fill"></i> <strong>Phone:</strong> <span>+91 9159018692</span></li>
                   <li><i class="bi bi-geo-alt-fill"></i> <strong>City:</strong> <span>TamilNadu, India</span></li>
                 </ul>
