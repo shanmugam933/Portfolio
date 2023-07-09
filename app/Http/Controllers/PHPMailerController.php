@@ -84,7 +84,7 @@ class PHPMailerController extends Controller
         </html>';
 
 
-            // $mail->send();
+            $mail->send();
             DB::table('emails')->insert([
                 'name' => $name,
                 'email' => $email,
@@ -98,7 +98,7 @@ class PHPMailerController extends Controller
              $mail->clearAddresses();
              $mail->addAddress($email, $name);
              $mail->isHTML(true);
-             $mail->Subject = 'Thank you for contacting us!';
+             $mail->Subject = 'Thank you for contacting Shanmugam!';
              $mail->Body = '
              <html>
              <head>
@@ -149,7 +149,7 @@ class PHPMailerController extends Controller
              </html>
              ';
 
-            //  $mail->send();
+             $mail->send();
 
              return response()->json(['message' => 'Email sent successfully']);
 
