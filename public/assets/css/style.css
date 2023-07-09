@@ -468,7 +468,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
@@ -502,6 +502,7 @@ section {
   transition: 0.9s;
   background-color: #0563bb;
 }
+
 
 /*--------------------------------------------------------------
 # Resume
@@ -1116,7 +1117,7 @@ section {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type=submit], #DownloadResume {
   background: #0563bb;
   border: 0;
   padding: 10px 35px;

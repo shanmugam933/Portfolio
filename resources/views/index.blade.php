@@ -274,6 +274,10 @@
               </ul>
             </div> --}}
           </div>
+          <div class="text-center mt-3">
+            <a href="{{ route('show.resume') }}"><button id="DownloadResume">View Resume</button></a>
+            <a href="{{ route('download.resume') }}"><button id="DownloadResume">Download Resume</button></a>
+          </div>
         </div>
 
       </div>
