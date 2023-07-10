@@ -278,7 +278,7 @@
             </div> --}}
           </div>
           <div class="text-center mt-3">
-            <a href="{{ route('show.resume') }}"><button id="DownloadResume">View Resume</button></a>
+            <a href="{{ route('show.resume') }}"><button id="ViewResume">View Resume</button></a>
             <a href="{{ route('download.resume') }}"><button id="DownloadResume">Download Resume</button></a>
           </div>
         </div>
@@ -720,8 +720,6 @@
 <script>
     $(document).ready(function() {
         // CSRF token
-       ;
-
         // Send message on button click
         $('#sendMessage').click(function() {
             var name = $('#name').val();
@@ -751,19 +749,20 @@
                 //     $('.loading').text('Loading...');
                 // },
                 success: function(result) {
-                    Swal.close();
+                //     Swal.close();
 
-                // Clear the input fields
-                $('#name').val('');
-                $('#email').val('');
-                $('#subject').val('');
-                $('#message').val('');
+                // // Clear the input fields
+                // $('#name').val('');
+                // $('#email').val('');
+                // $('#subject').val('');
+                // $('#message').val('');
 
-                 Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: result.message
-                });
+                //  Swal.fire({
+                //     icon: 'success',
+                //     title: 'Success',
+                //     text: result.message
+                // });
+                alert();
 
                 },
                 error: function(xhr, status, error) {
