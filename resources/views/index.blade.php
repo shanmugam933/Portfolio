@@ -260,6 +260,9 @@
                 <li>Produced clean, efficient code based on specifications. </li>
                 <li>Ensure brand consistency with the organization's guidelines.</li>
                 <li>Review design specifications for color schemes, typography, and layout.</li>
+                <li>Integrate third-party APIs and services to enhance application functionality.</li>
+                <li>Stay updated with the latest Laravel releases and emerging web development trends. </li>
+                <li>Conduct thorough testing and debugging to ensure high- quality software.</li>
               </ul>
             </div>
             {{-- <div class="resume-item">
@@ -279,10 +282,9 @@
             <a href="{{ route('download.resume') }}"><button id="DownloadResume">Download Resume</button></a>
           </div>
         </div>
-
       </div>
-    </section><!-- End Resume Section -->
-
+    </section>
+    <!-- End Resume Section -->
     <!-- ======= Portfolio Section ======= -->
     {{-- <section id="portfolio" class="portfolio section-bg">
       <div class="container" data-aos="fade-up">
@@ -436,7 +438,6 @@
       </div>
     </section> --}}
     <!-- End Portfolio Section -->
-
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
