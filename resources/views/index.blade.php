@@ -443,7 +443,6 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          
           <h2>Services</h2>
           <p>As a full-stack developer, I handle both front-end and back-end development, delivering end-to-end solutions for your web projects. From designing intuitive user interfaces to implementing complex server-side functionalities, I provide a comprehensive and scalable approach</p>
         </div>
@@ -666,7 +665,6 @@
               <div class="text-center"><button type="submit" id="sendMessage">Send Message</button></div>
             </div>
          </div>
-         <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7088513157576441857" class="mt-3" height="1100" width="30%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
         </div>
       </div>
     </section>
